@@ -1,0 +1,53 @@
+.row(style="padding-top:10px")
+  .col-lg-1
+  .col-lg-5
+    .panel.panel-default
+      .panel-heading Sprechstunden
+        a.icon-plus.icon-large.pull-right(data-toggle="modal", href="/pinnwand/#neue_sprechstunde")
+        #neue_sprechstunde.modal.fade
+          .modal-dialog
+            .modal-content
+              .modal-header
+                button.close(type="button", data-dismiss="modal", aria-hidden="true")
+                h4.modal-title Sprechstunde hinzuf&uuml;gen
+              .modal-body
+                form(role="form")
+                  .form-group
+                    label Lehrer:
+                    input.form-control(type="text", placeholder="Leherername", ng-model="lehrer")
+                  .form-group
+                    label Fach:
+                    input.form-control(type="text", placeholder="Name des Fachs", ng-model="fach")
+                  .form-group
+                    label Termin:
+                    input.form-control(type="text", placeholder="Sprechstundentermin", ng-model="termin")
+              .modal-footer
+                button.btn.btn-warning(type="button", data-dismiss="modal") Abbrechen
+                button.btn.btn-success(type="button", ng-click="neue_sprechstunde()", data-dismiss="modal") Hinzuf&uuml;gen
+      .panel-body
+        table.table.table-hover
+          tbody
+            tr(ng-repeat="sprechstunde in sprechstunden")
+              td
+                strong {{sprechstunde.value.lehrer}}
+              td {{sprechstunde.value.fach}}
+              td {{sprechstunde.value.termin}}
+  .col-lg-5
+    .panel.panel-default
+      .panel-heading Termine
+        //a.icon-plus.icon-large.pull-right(data-toggle="modal", href="#neuer_termin")
+        #neuer_termin.modal.fade
+          .modal-dialog
+            .modal-content
+              .modal-header
+                button.close(type="button", data-dismiss="modal", aria-hidden="true")
+                h4.modal-title Termin hinzuf&uuml;gen
+              .modal-body
+                input.form-control(type="text", placeholder="Terminbezeichung")
+                input.form-control(type="text", placeholder="Datum/Uhrzeit")
+              .modal-footer
+                button.btn.btn-danger.icon-remove(type="button", data-dismiss="modal")
+                button.btn.btn-success.glyphicon.glyphicon-ok(type="button", ng-click="neuer_termin()", data-dismiss="modal")
+      .panel-body
+        strong Dienstag 22.10.2013 Elternabend
+  .col-lg-1

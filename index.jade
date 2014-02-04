@@ -1,0 +1,39 @@
+doctype 5
+html(lang="en", id="ng-app", ng-app="klapla")
+  head
+    title Klassenplaner Dag-Hammarskj&ouml;ld-Gymnasium - 5b
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(href="components/bootstrap/dist/css/bootstrap.min.css", rel="stylesheet")
+    link(href="components/font-awesome/css/font-awesome.min.css", rel="stylesheet")
+    link(href="components/blueimp-gallery/css/blueimp-gallery.min.css", rel="stylesheet")
+    link(href="components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css", rel="stylesheet")
+    link(href="components/mystyles/main.css", rel="stylesheet")
+  body
+    nav.navbar.navbar-inverse(role="navigation")
+      .navbar-header
+        a.navbar-brand(ui-sref="index", ng-class="{ active: $state.includes('index') }") Klassenplaner 5b
+      .navbar-collapse.collapse
+        ul.nav.navbar-nav.navbar-right
+          li(ng-class="{ active: $state.includes('pinnwand') }")
+            a(ui-sref="pinnwand")
+              span.icon-bar.icon-pushpin.icon-large
+          li(ng-class="{ active: $state.includes('schueler') }")
+            a(ui-sref="schueler")
+              span.icon-bar.icon-group.icon-large
+          li(ng-class="{ active: $state.includes('bilder') }")
+            a(ui-sref="bilder")
+              span.icon-bar.icon-picture.icon-large
+          li(ng-class="{ active: $state.includes('downloads') }")
+            a(ui-sref="downloads")
+              span.icon-bar.icon-download.icon-large
+    .row(ui-view)
+    script(src="components/angular/angular.js")
+    script(src="components/angular-ui-router/release/angular-ui-router.js")
+    script(src="components/jquery/jquery.min.js")
+    script(src="components/bootstrap/dist/js/bootstrap.min.js")
+    script(src="components/blueimp-gallery/js/jquery.blueimp-gallery.min.js")
+    script(src="components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js")
+    script(src="frontends/pinnwand.js")
+    script(src="frontends/schueler.js")
+    script(src="frontends/bilder.js")
+    script(src="frontend.js")

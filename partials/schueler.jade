@@ -1,0 +1,38 @@
+.col-lg-1
+.col-lg-10
+  #adressen(style="padding-top:10px")
+    .panel.panel-default
+      .panel-body
+        form
+          table.table.table-hover
+            thead
+              tr
+                th Sch&uuml;ler
+                th Eltern
+                th.hidden-xs Addresse
+                th Telefonnummer
+                th.hidden-xs Email
+                th.hidden-xs
+            tbody
+              tr(ng-repeat="adresse in adressen")
+                td {{adresse.value.schuelername}}
+                td {{adresse.value.elternname}}
+                td.hidden-xs {{adresse.value.adresse}}
+                td {{adresse.value.telefonnummer}}
+                td.hidden-xs {{adresse.value.email}}
+                td.hidden-xs
+                  button.btn.btn-danger(type="submit", ng-click="loesche_schueler(adresse.value._id, adresse.value._rev)") L&ouml;schen
+              tr.hidden-xs
+                td
+                  input.form-control(placeholder="Sch&uuml;ler", type="text", ng-model="schuelername", pattern="[a-zA-Z0-9]+", required)
+                td
+                  input.form-control(placeholder="Eltern", type="text", ng-model="elternname", pattern="[a-zA-Z0-9]+", required)
+                td
+                  input.form-control(placeholder="Adresse", type="text", ng-model="adresse", required)
+                td
+                  input.form-control(placeholder="Telefonnummer", type="text", ng-model="telefonnummer", required)
+                td
+                  input.form-control(placeholder="Email", type="text", ng-model="email", type="email", required)
+                td
+                  button.btn.btn-success(type="submit", ng-click="speichere_schueler()") Speichern
+.col-lg-1

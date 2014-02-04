@@ -1,0 +1,71 @@
+{
+  "name": "eltern-dhg",
+  "version": "0.0.1",
+  "description": "Klassen Planer für Eltern",
+  "dependencies": {
+    "attachments": null,
+    "modules": null,
+    "properties": null,
+    "jade-precompiler": null,
+    "kanso-bower": null,
+    "stylus-precompiler": null
+  },
+  "modules": ["backends"],
+  "load": "backends/views",
+  "jade": {
+    "compile": [
+      "index.jade",
+      "partials/index.jade",
+      "partials/pinnwand.jade",
+      "partials/schueler.jade",
+      "partials/bilder.jade",
+      "partials/downloads.jade"
+    ]
+  },
+  "stylus": {
+    "compile": [ "components/mystyles/main.styl" ],
+    "remove_from_attachments": true
+  },
+  "bower": {
+    "install": false,
+    "dependencies": {
+      "angular": "~1.2",
+      "angular-resource": "~1.2",
+      "angular-ui-router": "~0.2.7",
+      "jquery" : "~2.0.3",
+      "bootstrap": "~3.0.3",
+      "font-awesome": "~3.2.1",
+      "blueimp-gallery": "~2.12.3",
+      "blueimp-bootstrap-image-gallery": "~3.1.0"
+    }
+  },
+  "attachments": [
+    "components/bootstrap/dist/css/bootstrap.min.css",
+    "components/bootstrap/dist/js/bootstrap.min.js",
+    "components/bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
+    "components/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+    "components/font-awesome/css/font-awesome.min.css",
+    "components/font-awesome/font/fontawesome-webfont.woff",
+    "components/font-awesome/font/fontawesome-webfont.ttf",
+    "components/angular/angular.js",
+    "components/angular/angular.min.js",
+    "components/angular-ui-router/release/angular-ui-router.min.js",
+    "components/angular-ui-router/release/angular-ui-router.js",
+    "components/jquery/jquery.min.js",
+    "frontends/pinnwand.js",
+    "frontends/schueler.js",
+    "frontends/bilder.js",
+    "frontend.js",
+    "components/myfonts/Pacifico/Pacifico.eot",
+    "components/myfonts/Pacifico/Pacifico.svg",
+    "components/myfonts/Pacifico/Pacifico.ttf",
+    "components/myfonts/Pacifico/Pacifico.woff",
+    "components/myimages/p5.png",
+    "components/myimages/inflicted.png",
+    "components/myimages/grass-wallpaper.jpg",
+    "components/blueimp-gallery/css/blueimp-gallery.min.css",
+    "components/blueimp-gallery/js/jquery.blueimp-gallery.min.js",
+    "components/blueimp-bootstrap-image-gallery/css/bootstrap-image-gallery.min.css",
+    "components/blueimp-bootstrap-image-gallery/js/bootstrap-image-gallery.min.js"
+  ]
+}

@@ -1,0 +1,31 @@
+.row(style="padding-top:10px")
+  .col-lg-1
+  .col-lg-2
+    .nav.nav-pills.nav-stacked(ng-repeat="ereignis in ereignisse")
+      li(ng-class="{ active: (aktives_ereignis===ereignis.value.name) }")
+        a(ui-sref="bilder", ng-click="aendere_ereignis(ereignis.value.name)") {{ereignis.value.titel}}
+  .col-lg-8
+    #blueimp-gallery.blueimp-gallery.blueimp-gallery-controls(data-use-bootstrap-modal="false")
+      .slides
+      h3.title
+      a.prev ‹
+      a.next ›
+      a.close ×
+      .modal.fade
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type="button", aria-hidden="true") &times;
+              h4.modal-title
+            .modal-body.next
+            .modal-footer
+              button.btn.btn-default.pull-left.prev(type="button")
+                i.glyphicon.glyphicon-chevron-left
+                Previous
+              button.btn.btn-primary.next(type="button")
+                Next
+                i.glyphicon.glyphicon-chevron-right
+    #links
+      a(href="{{picture.slide}}", title="Bild", data-gallery="", ng-repeat="picture in pictures")
+        img(src="{{picture.thump}}", alt="Bild", style="margin: 1px;")
+  .col-lg-1
