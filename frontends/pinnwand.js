@@ -1,6 +1,6 @@
 function PinnwandCtrl($scope, $http) {
 
-  $http.get('https://eltern-dhg.cloudant.com/app/_design/eltern-dhg/_view/sprechstunden').success(function (data) {
+  $http.get('./_view/sprechstunden').success(function (data) {
     $scope.sprechstunden = data.rows;
   });
 
@@ -13,8 +13,8 @@ function PinnwandCtrl($scope, $http) {
       "typ":   "sprechstunde"
     };
 
-    $http.post('https://eltern-dhg.cloudant.com/app/', sprechstunde).success(function (data) {
-      $http.get('https://eltern-dhg.cloudant.com/app/_design/eltern-dhg/_view/sprechstunden').success(function (data) {
+    $http.post('/api/', sprechstunde).success(function (data) {
+      $http.get('./_view/sprechstunden').success(function (data) {
         $scope.sprechstunden = data.rows;
         $scope.lehrer = "";
         $scope.termin = "";

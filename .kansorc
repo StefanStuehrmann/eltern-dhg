@@ -1,0 +1,8 @@
+exports.env = {
+    'default': {
+        db: 'http://localhost:5984/eltern-dhg'
+    },
+    'production': {
+        db: 'http://eltern-dhg:online@eltern-dhg.cloudant.com/app',
+    }
+};

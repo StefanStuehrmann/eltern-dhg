@@ -2,7 +2,7 @@ function BilderCtrl($scope, $http) {
   $scope.pictures = Array();
   $scope.aktives_ereignis = "marquartstein";
 
-  $http.get('https://eltern-dhg.cloudant.com/app/_design/eltern-dhg/_view/ereignisse').success(function (data) {
+  $http.get('./_view/ereignisse').success(function (data) {
     $scope.ereignisse = data.rows;
 
     for(i=1;i<=$scope.ereignisse[0].value.fotoanzahl;i++) {

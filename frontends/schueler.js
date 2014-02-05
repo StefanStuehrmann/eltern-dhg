@@ -1,6 +1,6 @@
 function SchuelerCtrl($scope, $http) {
 
-  $http.get('https://eltern-dhg.cloudant.com/app/_design/eltern-dhg/_view/schueler').success(function (data) {
+  $http.get('./_view/schueler').success(function (data) {
     $scope.adressen = data.rows;
   });
 
@@ -15,8 +15,8 @@ function SchuelerCtrl($scope, $http) {
       "typ":            "schueler"
     };
 
-    $http.post('https://eltern-dhg.cloudant.com/app/', adresse).success(function (data) {
-      $http.get('https://eltern-dhg.cloudant.com/app/_design/eltern-dhg/_view/schueler').success(function (data) {
+    $http.post('/api/', adresse).success(function (data) {
+      $http.get('./_view/schueler').success(function (data) {
         $scope.adressen = data.rows;
       });
     });
@@ -30,8 +30,8 @@ function SchuelerCtrl($scope, $http) {
   }
 
   $scope.loesche_schueler = function (id, rev) {
-    $http.delete('https://eltern-dhg.cloudant.com/app/'+id+'?rev='+rev).success(function (data) {
-      $http.get('https://eltern-dhg.cloudant.com/app/_design/eltern-dhg/_view/schueler').success(function (data) {
+    $http.delete('/api/'+id+'?rev='+rev).success(function (data) {
+      $http.get('./_view/schueler').success(function (data) {
         $scope.adressen = data.rows;
       });
     });

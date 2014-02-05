@@ -24,3 +24,23 @@ exports.views = {
     }
   }
 };
+
+exports.rewrites = [{
+    "from": "",
+    "to": "index.html",
+    "method": "GET",
+    "query": {}
+},{
+    "from": "/*",
+    "to": "/*",
+    "method": "GET",
+    "query": {}
+},{
+    "from": "/api",
+    "to": "/../../",
+    "query": {}
+},{
+    "from": "/api/*",
+    "to": "/../../*",
+    "query": {}
+}];
